@@ -1,11 +1,13 @@
-import { key } from "./key";
+import { key } from "./key.js";
 
-const keyboardRow = () => {
-    return (
-        <div class = "keyboard__row">
-            {key(['1'])}
-        </div>
-    )
+const keyboardRow = (btnQty) => {
+    const keyboardRow = document.createElement('div');
+    keyboardRow.className = 'keyboard__row';
+
+    for (let i = 0; i < btnQty.length; i++) {
+        keyboardRow.appendChild(key(btnQty[i]));
+    }
+    return keyboardRow;
 }
 
 export { keyboardRow };

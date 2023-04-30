@@ -1,9 +1,12 @@
-const key = (symbols) => {
-    return (symbols.map((symbol => {
-        <div class = "key">
-            {symbol}
-        </div>
-    })))
+const key = (symbol) => {
+    const key = document.createElement('div');
+    key.className = 'key';
+
+    console.log(symbol);
+
+    key.innerText = symbol;
+
+    return key;
 }
 
 export { key };

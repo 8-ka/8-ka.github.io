@@ -22,3 +22,25 @@ body {
     width: 100%;
     background-color: aqua;
 }
+
+.keyboard__row {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+}
+
+.key {
+    min-width: 40px;
+    height: 40px;
+    font-size: large;
+    border: 1px solid red;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.key:hover {
+    background-color: aquamarine;
+} 

@@ -1,6 +1,8 @@
-import { keyboardRow } from "./keyboardRow";
+import { keyboardRow } from "./keyboardRow.js";
+import { keysData } from "./keysData.js";
 
 (function() {
+    console.log(keyboardRow);
     const container = document.createElement('div');
     container.className = 'container';
 
@@ -16,5 +18,9 @@ import { keyboardRow } from "./keyboardRow";
     container.appendChild(textArea);
     container.appendChild(keyBoard);
 
-    // keyBoard.appendChild(keyboardRow());
+    keyBoard.appendChild(keyboardRow(keysData.firstRow));
+    keyBoard.appendChild(keyboardRow(keysData.secondRowEn));
+    keyBoard.appendChild(keyboardRow(keysData.thirdRowEn));
+    keyBoard.appendChild(keyboardRow(keysData.fourthRowEn));
+    keyBoard.appendChild(keyboardRow(keysData.fifthRow));
 })();
