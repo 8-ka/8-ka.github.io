@@ -7,6 +7,7 @@ const keyboardRow = (btnQty) => {
     for (let i = 0; i < btnQty.length; i++) {
         keyboardRow.appendChild(key(btnQty[i]));
     }
+
     return keyboardRow;
 }
 

@@ -1,5 +1,5 @@
 body {
-    background-color: lightgray;
+    background-color: rgba(253, 157, 157, 0.144);
     box-sizing: border-box;
 }
 
@@ -8,19 +8,19 @@ body {
     height: 800px;
     padding: 10px;
     margin: 0 auto;
-    background-color: brown;
+    background-color: rgb(82, 2, 2);
     display: flex;
     flex-wrap: wrap;
 }
 
 .text-area {
     width: 100%;
-    height: 40%;
+    height: 50%;
 }
 
 .keyboard {
     width: 100%;
-    background-color: aqua;
+    background-color: rgb(102, 3, 3);
 }
 
 .keyboard__row {
@@ -29,18 +29,33 @@ body {
     padding: 5px;
 }
 
-.key {
+.keyboard__key {
     min-width: 40px;
+    width: min-content;
     height: 40px;
     font-size: large;
     border: 1px solid red;
     border-radius: 5px;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    color: #ffe4c4;
 }
 
-.key:hover {
-    background-color: aquamarine;
-} 
+.keyboard__key:hover {
+    background-color: rgb(190, 29, 0);
+}
+
+.keyboard__key:active, .active {
+    background-color: rgb(155, 2, 2);
+}
+
+.caps-active {
+    border-color: rgb(42, 165, 48);
+}
+
+.space {
+    width: 30%;
+}
