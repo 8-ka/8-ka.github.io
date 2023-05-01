@@ -12,8 +12,9 @@ import { keysData } from "./keysData.js";
   const body = document.querySelector('body');
   body.appendChild(container);
 
-  const textInput = document.createElement('input');
+  const textInput = document.createElement('textarea');
   textInput.className = 'text-area';
+  textInput.readOnly = true;
 
   const keyBoard = document.createElement('div');
   keyBoard.className = 'keyboard';
@@ -67,6 +68,13 @@ import { keysData } from "./keysData.js";
     keyBoard.replaceChild(shiftFourthRowRu, fourthRowRu);
   }
 
+  const unShiftKeyboardRu = () => {
+    keyBoard.replaceChild(firstRow, shiftFirstRowRu);
+    keyBoard.replaceChild(secondRowRu, shiftSecondRowRu);
+    keyBoard.replaceChild(thirdRowRu, shiftThirdRowRu);
+    keyBoard.replaceChild(fourthRowRu, shiftFourthRowRu);
+  }
+
   const shiftKeyboard = () => {
     keyBoard.replaceChild(shiftFirstRowEn, firstRow);
     keyBoard.replaceChild(shiftSecondRowEn, secondRowEn);
@@ -74,43 +82,59 @@ import { keysData } from "./keysData.js";
     keyBoard.replaceChild(shiftFourthRowEn, fourthRowEn);
   }
 
+  const unShiftKeyboard = () => {
+    keyBoard.replaceChild(firstRow, shiftFirstRowEn);
+    keyBoard.replaceChild(secondRowEn, shiftSecondRowEn);
+    keyBoard.replaceChild(thirdRowEn, shiftThirdRowEn);
+    keyBoard.replaceChild(fourthRowEn, shiftFourthRowEn);
+  }
+
 
   const keys = document.querySelectorAll('.keyboard__key');
   const space = document.querySelector('.space');
-  const backspace = document.querySelector('.backspace');
-  const shift = document.querySelector('.shift');
+  const backspace = document.querySelector('.keyboard__key backspace');
+  const shiftLeft = document.querySelector('.shiftleft');
+  const shiftRight = document.querySelector('.shiftright');
   const alt = document.querySelector('.alt');
   const capslock = document.querySelector('.capslock');
   const enter = document.querySelector('.enter');
   const textArea = document.querySelector('.text-area');
 
-  const enterDown = () => {
-    console.log('f');
-    const content = textInput.innerText;
-    const newContent = content + '\n';
-
-    textInput.innerText = newContent;
-  }
-
-  console.log(enter);
-
-  enter.addEventListener('click', enterDown);
-  enter.addEventListener('keydown', enterDown);
-
   window.addEventListener('keydown', (e) => {
-    // console.log(e.code);
+    console.log(e);
+    if (e.key.length <= 1) {
+      textInput.value += e.key;
+    }
+
     for (let key of keys) {
-      // console.log(key.attributes);
-      if (e.key.toLowerCase() === key.attributes.data.value) {
+      console.log(e.key);
+      if (e.key === key.attributes.data.value) {
         key.classList.add('active');
       }
     }
 
+    if (e.key === 'Enter') {
+      const content = textInput.value;
+      const newContent = content + '\n';
+
+      textInput.value = newContent;
+    }
+
+    if (e.key === 'Backspace') {
+      textInput.value = textInput.value.slice(0, -1);
+      // backspace.classList.add('active');
+    }
+
     if (e.key === 'CapsLock') {
       isCapsLocked = !isCapsLocked;
-      
       capslock.classList.toggle('caps-active');
-      // isCapsLocked ? shiftKeyboard() : 
+      capslock.classList.add('active')
+      
+      if (isCapsLocked) {
+        shiftKeyboard();
+      } else {
+        unShiftKeyboard();
+      }
     }
 
     if (e.key === 'Control' && e.shiftKey) {
@@ -121,22 +145,19 @@ import { keysData } from "./keysData.js";
     if (e.key === 'Shift') {
       isEnLang ? shiftKeyboard() : shiftKeyboardRu();
     }
-
-
-    textInput.innerText += e.key;
   });
 
   window.addEventListener('keyup', (e) => {
     for (let key of keys) {
-      if (e.key.toLowerCase() === key.attributes.data.value) {
+      if (e.key === key.attributes.data.value) {
         key.classList.remove('active');
       }
     }
-  });
 
-  // const backspace = () => {
-  //   textInput.value;
-  // }
+    if (e.key === 'Shift') {
+      isEnLang ? unShiftKeyboard() : unShiftKeyboardRu();
+    }
+  });
 })();
 
 

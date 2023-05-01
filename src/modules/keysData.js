@@ -1,6 +1,6 @@
 export const keysData = {
     firstRow: ['`', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-', '=', 'Backspace'],
-    shiftFirstRowEn: ['~', '!', '#', '$', '%', '^', '&', '*', '(', ')', '_', '+', 'Backspace'],
+    shiftFirstRowEn: ['~', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_', '+', 'Backspace'],
     shiftFirstRowRu: ['Ё', '!', '"', '№', ';', '%', ':', '?', '*', '(', ')', '_', '+', 'Backspace'],
     secondRowEn: ['Tab', 'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', '[', ']', '\\'],
     shiftSecondRowEn: ['Tab', 'Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P', '{', '}', '|'],
@@ -10,9 +10,9 @@ export const keysData = {
     shiftThirdRowEn: ['CapsLock', 'A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L', ':', '"', 'Enter'],
     thirdRowRu: ['CapsLock', 'ф', 'ы', 'в', 'а', 'п', 'р', 'о', 'л', 'д', 'ж', 'э', 'Enter'],
     shiftThirdRowRu: ['CapsLock', 'Ф', 'Ы', 'В', 'А', 'П', 'Р', 'О', 'Л', 'Д', 'Ж', 'Э', 'Enter'],
-    fourthRowEn: ['Shift', 'z', 'x', 'c', 'v', 'b', 'n', 'm', ',', '.', '/', 'ArrowUp', 'Shift'],
-    shiftFourthRowEn: ['Shift', 'Z', 'X', 'C', 'V', 'B', 'N', 'M', '<', '>', '?', 'ArrowUp', 'Shift'],
-    fourthRowRu: ['Shift', 'я', 'ч', 'с', 'м', 'и', 'т', 'ь', 'б', 'ю', '.', 'Shift'],
-    shiftFourthRowRu: ['Shift', 'Я', 'Ч', 'С', 'М', 'И', 'Т', 'Ь', 'Б', 'Ю', ',', 'Shift'],
-    fifthRow: ['Control', 'Alt', 'Space', 'Alt', 'Control','ArrowLeft', 'ArrowDown', 'ArrowRight'],
+    fourthRowEn: ['ShiftLeft', 'z', 'x', 'c', 'v', 'b', 'n', 'm', ',', '.', '/', 'ArrowUp', 'ShiftRight'],
+    shiftFourthRowEn: ['ShiftLeft', 'Z', 'X', 'C', 'V', 'B', 'N', 'M', '<', '>', '?', 'ArrowUp', 'ShiftRight'],
+    fourthRowRu: ['ShiftLeft', 'я', 'ч', 'с', 'м', 'и', 'т', 'ь', 'б', 'ю', '.', 'ShiftRight'],
+    shiftFourthRowRu: ['ShiftLeft', 'Я', 'Ч', 'С', 'М', 'И', 'Т', 'Ь', 'Б', 'Ю', ',', 'ShiftRight'],
+    fifthRow: ['ControlLeft', 'AltLeft', 'Space', 'AltRight', 'ControlRight','ArrowLeft', 'ArrowDown', 'ArrowRight'],
 };
