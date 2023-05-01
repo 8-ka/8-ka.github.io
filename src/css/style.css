@@ -52,10 +52,17 @@ body {
     background-color: rgb(155, 2, 2);
 }
 
+.backspace {
+    background: url('/src/icons/backspace-bold.svg');
+    background-size: 30px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
 .caps-active {
-    border-color: rgb(42, 165, 48);
+    border-color: rgb(216, 204, 42);
 }
 
 .space {
-    width: 30%;
+    width: 40%;
 }

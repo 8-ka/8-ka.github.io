@@ -2,6 +2,7 @@ const key = (symbol) => {
     const key = document.createElement('div');
     key.className = 'keyboard__key';
     key.classList.add(symbol.toLowerCase());
+    key.setAttribute('data', `${symbol.toLowerCase()}`);
 
     key.innerText = symbol === 'CapsLock'
         ? 'CL' : symbol === 'Backspace' 
