@@ -122,7 +122,6 @@ import { keysData } from "./keysData.js";
 
     if (e.key === 'Backspace') {
       textInput.value = textInput.value.slice(0, -1);
-      // backspace.classList.add('active');
     }
 
     if (e.key === 'CapsLock') {
